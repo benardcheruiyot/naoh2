@@ -210,7 +210,8 @@ sudo ufw --force enable
 sudo ufw allow ssh
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
-sudo ufw allow 3002/tcp
+sudo ufw delete allow 3002/tcp 2>/dev/null || true
+sudo ufw allow 4000/tcp
 
 # Install Nginx (optional but recommended)
 print_status "Installing Nginx..."
@@ -225,7 +226,7 @@ server {
     server_name _;
 
     location / {
-        proxy_pass http://localhost:3002;
+        proxy_pass http://localhost:4000;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
