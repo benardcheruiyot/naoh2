@@ -37,7 +37,7 @@ jobs:
     name: Deploy to EC2
     runs-on: ubuntu-latest
     needs: test
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     
     steps:
     - name: 🚀 Checkout repository
@@ -126,7 +126,7 @@ jobs:
           echo "🎉 Deployment completed successfully!"
           echo "📊 Final status:"
           pm2 status ${{ env.APP_NAME }}
-          echo "🌐 Application should be available at: http://${{ secrets.EC2_HOST }}:3004"
+          echo "🌐 Application should be available at: http://${{ secrets.EC2_HOST }}:4000"
 
     - name: 📱 Slack notification (success)
       if: success()
