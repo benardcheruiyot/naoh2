@@ -2,7 +2,7 @@ name: Deploy Express App to EC2 Ubuntu
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   workflow_dispatch: # Allows manual deployment
 
 env:
@@ -126,7 +126,7 @@ jobs:
           echo "🎉 Deployment completed successfully!"
           echo "📊 Final status:"
           pm2 status ${{ env.APP_NAME }}
-          echo "🌐 Application should be available at: http://${{ secrets.EC2_HOST }}:3002"
+          echo "🌐 Application should be available at: http://${{ secrets.EC2_HOST }}:3004"
 
     - name: 📱 Slack notification (success)
       if: success()
