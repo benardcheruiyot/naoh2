@@ -1,0 +1,120 @@
+/* MKOPAJI - Consistent Theme Colors */
+:root {
+    /* Primary Green Colors */
+    --primary-green: #10b981;
+    --secondary-green: #059669;
+    --accent-green: #34d399;
+    --light-green: #d1fae5;
+    --dark-green: #065f46;
+
+    /* Dark Theme Colors */
+    --dark-slate: #0f172a;
+    --medium-slate: #1e293b;
+    --light-slate: #334155;
+    --text-light: #f8fafc;
+    --text-dark: #1f2937;
+
+    /* Functional Colors */
+    --success-green: #10b981;
+    --error-red: #ef4444;
+    --warning-orange: #f97316;
+    --info-blue: #3b82f6;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    --gradient-secondary: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+    --gradient-cosmic: linear-gradient(45deg, #10b981, #059669, #34d399, #10b981);
+    --gradient-background: linear-gradient(135deg,#d1fae5 0%,#6ee7b7 50%,#10b981 100%);
+    --gradient-green: linear-gradient(45deg, #10b981, #059669);
+
+    /* Glass Effects */
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-bg-dark: rgba(15, 23, 42, 0.8);
+
+    /* Shadows */
+    --shadow-soft: 0 10px 40px rgba(0, 0, 0, 0.08);
+    --shadow-green: 0 10px 40px rgba(16, 185, 129, 0.18);
+    --shadow-strong: 0 20px 60px rgba(16, 185, 129, 0.22);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--gradient-background);
+    min-height: 100vh;
+    color: var(--text-light);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Cosmic Background Animation */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(251, 191, 36, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(217, 119, 6, 0.05) 0%, transparent 50%);
+    animation: cosmicRotation 20s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes cosmicRotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Common Button Styles */
+.btn-mkopaji-primary {
+    background: var(--gradient-gold);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: var(--shadow-gold);
+}
+
+.btn-mkopaji-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+    color: white;
+}
+
+/* Common Card Styles */
+.card-mkopaji {
+    background: var(--glass-bg);
+    border-radius: 20px;
+    border: 3px solid transparent;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-mkopaji:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-gold);
+}
+
+/* Text Utilities */
+.text-gold { color: var(--primary-gold); }
+.text-accent-gold { color: var(--accent-gold); }
+.text-success { color: var(--success-green); }
+.text-error { color: var(--error-red); }
+
+/* Background Utilities */
+.bg-glass { background: var(--glass-bg); }
+.bg-glass-dark { background: var(--glass-bg-dark); }
+.bg-gradient-primary { background: var(--gradient-primary); }
+.bg-gradient-secondary { background: var(--gradient-secondary); }

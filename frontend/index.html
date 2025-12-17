@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- Replaced with reference landing for visual parity -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Get instant mobile loans up to Ksh. 100,000 sent directly to your Mpesa. No paperwork, no collateral, no CRB check. Fast approval and secure application. Apply now for quick cash!">
+  <title>E-Pesa Loan | Instant Loans to Mpesa</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/kopesha-styles.css">
+    <link rel="stylesheet" href="assets/css/mkopaji-theme.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .page-wrap {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: none;
+        }
+        .hero-card {
+            max-width: 420px;
+            width: 100%;
+            background: #fff;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 24px 0 rgba(60, 72, 88, 0.10);
+            border: 1px solid #e5e7eb;
+            padding: 2.2rem 1.5rem 2rem 1.5rem;
+            color: #222;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInCard 1.2s cubic-bezier(.42,0,.58,1);
+        }
+        @keyframes fadeInCard {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-card::before {
+            content: "";
+            position: absolute;
+            top: -30px; left: -30px;
+            width: 80px; height: 80px;
+            background: radial-gradient(circle, #bbf7d0 0%, #fff0 80%);
+            z-index: 0;
+            filter: blur(8px);
+        }
+        .hero-card::after {
+            content: "";
+            position: absolute;
+            bottom: -30px; right: -30px;
+            width: 80px; height: 80px;
+            background: radial-gradient(circle, #6ee7b7 0%, #fff0 80%);
+            z-index: 0;
+            filter: blur(8px);
+        }
+        .hero-card * { position: relative; z-index: 1; }
+        h2 {
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            font-size: 2rem;
+            letter-spacing: -1px;
+            color: #10b981;
+            text-shadow: none;
+        }
+        p {
+            margin: 0 0 1.2rem;
+            font-size: 1.08rem;
+            color: #059669;
+        }
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.2rem 0 2rem;
+        }
+        .check-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.85rem;
+            font-weight: 500;
+            color: #4b5563;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+        }
+        .check-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #059669;
+            font-size: 1.1rem;
+            line-height: 1;
+            font-weight: bold;
+            text-shadow: 0 1px 2px #bbf7d0;
+        }
+        .btn-apply {
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.08rem;
+            padding: 13px 0;
+            border-radius: 999px;
+            width: 100%;
+            box-shadow: 0 2px 12px #10b98122;
+            text-decoration: none;
+            transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+            margin-top: 1.2rem;
+            cursor: pointer;
+            outline: none;
+            display: inline-block;
+        }
+        .btn-apply:hover, .btn-apply:focus {
+            background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+            box-shadow: 0 4px 20px #05966933;
+            transform: translateY(-2px) scale(1.03);
+        }
+        @media (max-width: 600px) {
+            .hero-card {
+                padding: 1.5rem 0.8rem 1.3rem 0.8rem;
+                max-width: 99vw;
+                min-width: 0;
+                width: 100%;
+                font-size: 1rem;
+            }
+            h2 { font-size: 1.25rem; }
+            .btn-apply { font-size: 1rem; padding: 12px 0; }
+            .check-list li { font-size: 0.98rem; }
+            .hero-card .check-list { margin: 1rem 0 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <div class="hero-card text-center">
+            <h2>Fast Mobile Loans</h2>
+            <p>Get a fast mobile loan of up to <strong>Ksh.&nbsp;100,000</strong> within&nbsp;<strong>5 minutes</strong>.</p>
+            <ul class="check-list">
+                <li>No CRB check</li>
+                <li>No paperwork</li>
+                <li>No collateral</li>
+                <li>No guarantors</li>
+            </ul>
+            <a href="/apply.html" class="btn-apply">Apply Now</a>
+        </div>
+    </div>
+</body>
+</html>

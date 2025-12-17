@@ -1,0 +1,32 @@
+:root{
+  --bg: #e6f9f2;
+  --card-bg: #ffffff;
+  --primary-1: #10b981;
+  --primary-2: #059669;
+  --text: #1a2e22;
+  --muted: #5bb98c;
+}
+
+html,body{height:100%;margin:0}
+body{font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:var(--bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; color:var(--text); transition: background 0.4s;}
+
+/* Center wrapper */
+.page-wrap{height:100vh;display:flex;align-items:center;justify-content:center}
+
+/* Single centered card (match screenshot) */
+/* Modern card with green shadow and more rounding */
+.hero-card{background:var(--card-bg);width:420px;max-width:92%;padding:36px 36px 28px;border-radius:22px;box-shadow:0 18px 60px rgba(16,185,129,0.13);text-align:center; border: 1.5px solid #b6f0d3;}
+.hero-title{font-size:36px;font-weight:800;margin:0 0 12px;color:var(--primary-1);letter-spacing:-1px;}
+.hero-sub{margin:0 0 22px;color:var(--muted);font-size:1rem}
+
+.hero-body{display:grid;grid-template-columns:44px 1fr;gap:8px 22px;align-items:start;justify-items:start;margin-top:6px}
+.checks-icons{display:flex;flex-direction:column;gap:18px;padding-top:6px}
+.check-icon{display:inline-flex;width:28px;height:28px;background:linear-gradient(180deg,var(--primary-1),var(--primary-2));color:#fff;align-items:center;justify-content:center;border-radius:8px;font-weight:800;transform:translateY(1px)}
+.check-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.check-list li{font-weight:600;color:var(--text);font-size:1rem}
+
+.hero-footer{margin-top:22px}
+.cta-pill{display:block;text-decoration:none;background:linear-gradient(135deg,var(--primary-1),var(--primary-2));color:#fff;padding:16px 28px;border-radius:999px;font-weight:800;font-size:1.05rem;box-shadow:0 18px 50px rgba(16,185,129,0.16);transition: background 0.3s, box-shadow 0.3s;}
+.cta-pill:hover{background:linear-gradient(135deg,#059669,#10b981);box-shadow:0 24px 60px rgba(16,185,129,0.22);}
+
+@media (max-width:420px){.hero-card{padding:22px}.hero-title{font-size:28px}.hero-body{grid-template-columns:36px 1fr;gap:8px 12px}.cta-pill{padding:12px 20px}}

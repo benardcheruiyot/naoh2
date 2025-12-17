@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /backend/
+
+# Allow all other content to be crawled
+Allow: /
+
+Sitemap: https://kopa.mkopaji.com/sitemap.xml
