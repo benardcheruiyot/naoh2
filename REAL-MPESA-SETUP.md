@@ -26,6 +26,7 @@
      - **Passkey** (long alphanumeric string)
 
 ### Step 2: Set Up Callback URL (CRITICAL for STK Push)
+**Production Domain:** https://mkopaji.mkopaji.com
 
 **Option A: Using ngrok (Recommended for testing)**
 ```bash

@@ -221,7 +221,7 @@ async function validateProduction() {
         console.log('\nNext steps:');
         console.log('1. Deploy to your production server');
         console.log('2. Setup SSL certificate');
-        console.log('3. Configure domain and DNS');
+        console.log('3. Configure domain and DNS (e.g., mkopaji.mkopaji.com)');
         console.log('4. Test with small transactions');
         console.log('5. Monitor for the first 24 hours');
         return true;

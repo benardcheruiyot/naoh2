@@ -73,7 +73,7 @@ npm install -g ngrok
 ngrok http 4000
 
 # Copy the https URL (e.g., https://abc123.ngrok.io)
-# Update CALLBACK_URL in config with: https://abc123.ngrok.io/api/mpesa-callback
+# Update CALLBACK_URL in config with: https://mkopaji.mkopaji.com/api/mpesa-callback
 ```
 
 ### 4. Test STK Push
@@ -155,7 +155,7 @@ When ready for production:
 2. **Set environment** to 'production'
 3. **Use HTTPS** for all callbacks
 4. **Deploy to cloud** (Heroku, AWS, etc.)
-5. **Configure domain** for callbacks
+5. **Configure domain** for callbacks (e.g., mkopaji.mkopaji.com)
 
 ## 📚 Documentation
 
