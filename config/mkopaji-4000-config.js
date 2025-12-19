@@ -10,9 +10,19 @@ module.exports = {
     INITIATOR_NAME: process.env.MKOPAJI4000_INITIATOR_NAME || 'mkopaji4000api',
     SECURITY_CREDENTIAL: process.env.MKOPAJI4000_SECURITY_CREDENTIAL || 'Mkopaji4000!*!',
     ENVIRONMENT: process.env.MKOPAJI4000_ENVIRONMENT || 'sandbox',
-    BASE_URL: process.env.MKOPAJI4000_BASE_URL || 'https://sandbox.safaricom.co.ke',
-    OAUTH_URL: process.env.MKOPAJI4000_OAUTH_URL || 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials',
-    STK_PUSH_URL: process.env.MKOPAJI4000_STK_PUSH_URL || 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest',
-    STK_PUSH_QUERY_URL: process.env.MKOPAJI4000_STK_PUSH_QUERY_URL || 'https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query',
-    B2C_URL: process.env.MKOPAJI4000_B2C_URL || 'https://sandbox.safaricom.co.ke/mpesa/b2c/v1/paymentrequest',
+    BASE_URL: (process.env.MKOPAJI4000_ENVIRONMENT === 'production') 
+        ? 'https://api.safaricom.co.ke' 
+        : 'https://sandbox.safaricom.co.ke',
+    OAUTH_URL: (process.env.MKOPAJI4000_ENVIRONMENT === 'production')
+        ? 'https://api.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
+        : 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials',
+    STK_PUSH_URL: (process.env.MKOPAJI4000_ENVIRONMENT === 'production')
+        ? 'https://api.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
+        : 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest',
+    STK_PUSH_QUERY_URL: (process.env.MKOPAJI4000_ENVIRONMENT === 'production')
+        ? 'https://api.safaricom.co.ke/mpesa/stkpushquery/v1/query'
+        : 'https://sandbox.safaricom.co.ke/mpesa/stkpushquery/v1/query',
+    B2C_URL: (process.env.MKOPAJI4000_ENVIRONMENT === 'production')
+        ? 'https://api.safaricom.co.ke/mpesa/b2c/v1/paymentrequest'
+        : 'https://sandbox.safaricom.co.ke/mpesa/b2c/v1/paymentrequest',
 };

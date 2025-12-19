@@ -107,15 +107,15 @@ class Mkopaji4000Service {
             const timestamp = new Date().toISOString().replace(/[^0-9]/g, '').substring(0, 14);
             const password = Buffer.from(mkopaji4000Config.BUSINESS_SHORT_CODE + mkopaji4000Config.PASSKEY + timestamp).toString('base64');
 
-            // Use Buy Goods transaction type with Till number for production
+            // Use PayBill transaction type for production PayBill business
             const payload = {
                 BusinessShortCode: mkopaji4000Config.BUSINESS_SHORT_CODE,
                 Password: password,
                 Timestamp: timestamp,
-                TransactionType: 'CustomerBuyGoodsOnline', // Buy Goods for Till number
-                Amount: parseFloat(amount), // Use parseFloat for accurate amount handling
+                TransactionType: 'CustomerPayBillOnline', // PayBill for production business shortcode
+                Amount: Math.round(parseFloat(amount)), // Ensure integer amount
                 PartyA: formattedPhone,
-                PartyB: '4676274', // Use Till number instead of business shortcode
+                PartyB: '4676274', // Use till number as PartyB
                 PhoneNumber: formattedPhone,
                 CallBackURL: mkopaji4000Config.CALLBACK_URL,
                 AccountReference: accountReference || 'MKOPAJI-4000-LOAN',
@@ -183,13 +183,13 @@ class Mkopaji4000Service {
             const password = Buffer.from(mkopaji4000Config.BUSINESS_SHORT_CODE + mkopaji4000Config.PASSKEY + timestamp).toString('base64');
 
             const payload = {
-                BusinessShortCode: mpesaConfig.BUSINESS_SHORT_CODE,
+                BusinessShortCode: mkopaji4000Config.BUSINESS_SHORT_CODE,
                 Password: password,
                 Timestamp: timestamp,
                 CheckoutRequestID: checkoutRequestId
             };
 
-            const response = await axios.post(mpesaConfig.STK_QUERY_URL, payload, {
+            const response = await axios.post(mkopaji4000Config.STK_PUSH_QUERY_URL, payload, {
                 headers: {
                     'Authorization': 'Bearer ' + accessToken,
                     'Content-Type': 'application/json'
