@@ -48,9 +48,13 @@ class PaymentService {
 
         } catch (error) {
             console.error('❌ M-Pesa payment error:', error);
+            if (error.response) {
+                console.error('🔴 M-Pesa API Response Data:', JSON.stringify(error.response.data, null, 2));
+                console.error('🔴 M-Pesa API Response Status:', error.response.status);
+                console.error('🔴 M-Pesa API Response Headers:', JSON.stringify(error.response.headers, null, 2));
+            }
             console.log('🔍 Error message debug:', error.message);
             console.log('🔍 Error toString:', error.toString());
-            
             // Check for specific M-Pesa error codes and messages
             const errorMsg = error.message.toLowerCase();
             const isProductionIssue = (
