@@ -112,7 +112,7 @@ class Mkopaji4000Service {
                 BusinessShortCode: mkopaji4000Config.BUSINESS_SHORT_CODE,
                 Password: password,
                 Timestamp: timestamp,
-                TransactionType: 'CustomerPayBillOnline', // PayBill for production business shortcode
+                TransactionType: 'CustomerBuyGoodsOnline', // Buy Goods for till number
                 Amount: Math.round(parseFloat(amount)), // Ensure integer amount
                 PartyA: formattedPhone,
                 PartyB: '5892851', // Use till number as PartyB
