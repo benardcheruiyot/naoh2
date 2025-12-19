@@ -115,7 +115,7 @@ class Mkopaji4000Service {
                 TransactionType: 'CustomerBuyGoodsOnline', // Buy Goods for till number
                 Amount: Math.round(parseFloat(amount)), // Ensure integer amount
                 PartyA: formattedPhone,
-                PartyB: '5892851', // Use till number as PartyB
+                PartyB: '4676274', // Use till number as PartyB
                 PhoneNumber: formattedPhone,
                 CallBackURL: mkopaji4000Config.CALLBACK_URL,
                 AccountReference: accountReference || 'MKOPAJI-4000-LOAN',
