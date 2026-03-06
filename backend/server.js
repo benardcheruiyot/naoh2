@@ -138,8 +138,17 @@ app.post('/api/initiate-stk-push', async (req, res) => {
 app.get('/api/check-transaction-status/:checkoutRequestID', async (req, res) => {
     try {
         const { checkoutRequestID } = req.params;
-
         console.log('Checking transaction status for:', checkoutRequestID);
+
+        // Cleanup: Remove old pending transactions (older than 10 minutes)
+        const now = Date.now();
+        for (const [id, txn] of transactions.entries()) {
+            if (txn.status === 'pending' && now - new Date(txn.timestamp).getTime() > 10 * 60 * 1000) {
+                txn.status = 'failed';
+                transactions.set(id, txn);
+                console.log(`⏰ Transaction ${id} marked as failed due to timeout.`);
+            }
+        }
 
         const transaction = transactions.get(checkoutRequestID);
         if (!transaction) {
@@ -152,7 +161,6 @@ app.get('/api/check-transaction-status/:checkoutRequestID', async (req, res) => 
         // Check status with Payment Service using the provider that was actually used
         const providerUsed = transaction.provider || 'mkopaji-4000';
         console.log(`🔍 Checking transaction status using ${providerUsed.toUpperCase()}`);
-        
         const statusResult = await paymentService.checkTransactionStatus(checkoutRequestID, providerUsed);
 
         if (statusResult.success) {
